@@ -4,12 +4,15 @@ import json
 
 fake = Faker()
 
-"""Creating a empty list so the generated records can be stored in there 
-using a for loop. Also adding a timestamp in Event_Date_Records so it is
-suitable for Kafka"""
-
 
 def generate_data(num_records):
+    """
+    Creating an empty list so the generated records can be stored in there
+    using a for loop. Also adding a timestamp in Event_Date_Records so it is
+    suitable for Kafka
+
+    :param num_records: The amount of record there need to be generated
+    """
     data = []
 
     for i in range(num_records):
@@ -33,11 +36,9 @@ def generate_data(num_records):
     return df
 
 
-"""Making sure that the data is suitable for Kafka """
-
-
 # Verify serialization
 def validate(df):
+    """Making sure that the data is suitable for Kafka """
     sample_record = df.iloc[0].to_dict()
     json_record = json.dumps(sample_record)
 
@@ -50,10 +51,9 @@ def validate(df):
 
     return
 
-"""Exporting data to a JSON file"""
-
 
 def to_json(df):
+    """Exporting data to a JSON file"""
     df.to_json('personal_data.json', orient='records', lines=True)
 
     return

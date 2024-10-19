@@ -1,16 +1,21 @@
 
-"""Read the files from the HDFS and then write it into a Hive table"""
+def read_csv_to_hive(path_file, table_name):
+    """
+    Reads a CSV file from HDFS and writes it to a Hive table.
 
-df1 = spark.read.csv("hdfs:///user/hadoop/drivers.csv", header=True, inferSchema=True)
-df1.write.saveAsTable("drivers", format="hive", mode="overwrite")
+    :param path_file: Path to the CSV file in HDFS example: "hdfs:///user/hadoop/drivers.csv"
+    :param table_name: Name of the Hive table to write to
+    """
+    # Read the CSV file from HDFS
+    df = spark.read.csv(path_file, header=True, inferSchema=True)
 
-df2 = spark.read.csv("hdfs:///user/hadoop/timesheet.csv", header=True, inferSchema=True)
-df2.write.saveAsTable("timesheet", format="hive", mode="overwrite")
+    # Write the DataFrame to a Hive table
+    df.write.saveAsTable(table_name, format="hive", mode="overwrite")
 
-df3 = spark.read.csv("hdfs:///user/hadoop/truck_event_text_partition.csv", header=True, inferSchema=True)
-df3.write.saveAsTable("truck_event_text_partition", format="hive", mode="overwrite")
+    spark.sql("SHOW TABLES").show()
 
-spark.sql("SHOW TABLES").show()
+    return
+
 
 """Creating a Dataframe that contains the asked columns for aggregated information"""
 
