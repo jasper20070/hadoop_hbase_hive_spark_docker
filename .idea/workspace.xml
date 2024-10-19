@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="522b405e-d258-4b0c-bf46-513cd9735c01" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Bonus assignment/Bonus_assignment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bonus assignment/personal_data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bonus assignment/Bonus_assignment.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bonus assignment/personal_data.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
