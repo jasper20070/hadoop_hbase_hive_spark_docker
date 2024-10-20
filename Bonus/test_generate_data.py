@@ -1,4 +1,4 @@
-from Bonus_assignment import generate_data
+from Generate_data import generate_data
 
 def test_generate_data():
     df = generate_data(10)  # Generate 10 records for testing
